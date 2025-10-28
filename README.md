@@ -22,15 +22,34 @@ GORM помогает быстро описать модели, автомати
 # Скриншоты работы
 
 1. Проверим работает ли сервер:
+
+```bash
+curl http://92.63.176.68:8080/health
+```
+
 <img width="262" height="72" alt="1" src="https://github.com/user-attachments/assets/c892be5b-9957-4a20-80d2-5a78f2337440" />
 
 2. Создание пользователя:
+
+```bash
+curl -X POST http://92.63.176.68:8080/users -H "Content-Type: application/json" -d "{\"name\":\"Alice\",\"email\":\"alice@example.com\"}"
+```
 <img width="539" height="110" alt="2" src="https://github.com/user-attachments/assets/db29b56b-001b-4715-8c05-c8ed92e00fce" />
 
 3. Создание заметки:
+
+```bash
+curl -X POST http://92.63.176.68:8080/notes -H "Content-Type: application/json" -d "{\"title\":\"Первая заметка\",\"content\":\"Текст...\",\"userId\":1,\"tags\":[\"go\",\"gorm\"]}"
+```
+
 <img width="540" height="175" alt="3" src="https://github.com/user-attachments/assets/51813d01-1850-4aa6-9211-5f263bde4405" />
 
 4. Получение заметки:
+
+```bash
+curl http://92.63.176.68:8080/notes/1
+```
+
 <img width="545" height="145" alt="4" src="https://github.com/user-attachments/assets/735d92ab-a682-481c-a978-7a48c4c4c13f" />
 
 # Ответы на контрольные вопросы
